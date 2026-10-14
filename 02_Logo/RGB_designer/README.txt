@@ -1,0 +1,1 @@
+Designer's official RGB PNG set (supplied by Badr 2026-10-14, 1000 px wide). Names assigned by content (colourway identified by measured colours; the Right files are SOLID GOLD, the Left files are CMYK gradient). These are the screen reference for the logo; the SVG/PNG exports in ../SVG, ../1x, ../4x carry the same colours and the same geometry (pixel overlay verified).

@@ -1,0 +1,91 @@
+<title>إعداد Canva للضيافة</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap">
+<style>
+/* Layout: one guided column, two big steps, each a stack of tick-able cards; a progress bar fixed at the top; a closing state when every box is ticked. */
+:root{--bg:#FFFFFF;--panel:#F5F2EE;--ink:#101820;--muted:#5C5853;--accent:#8E732A;--on-accent:#FFFFFF;--line:#B6ADA5;--ok:#13322B;--gold:#D6AA42;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101820;--panel:#1C242E;--ink:#FFFFFF;--muted:#B6ADA5;--accent:#D29F13;--on-accent:#101820;--line:#3A4350;--ok:#8DAE81;--gold:#D6AA42;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#101820;--panel:#1C242E;--ink:#FFFFFF;--muted:#B6ADA5;--accent:#D29F13;--on-accent:#101820;--line:#3A4350;--ok:#8DAE81;--gold:#D6AA42;color-scheme:dark}
+html{direction:rtl}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.8 "Almarai",Arial,sans-serif;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+*{box-sizing:border-box}
+.wrap{max-width:760px;margin:0 auto}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:14px 0 10px;z-index:3;border-bottom:1px solid var(--line)}
+.bar .track{height:6px;background:var(--panel);border-radius:0;overflow:hidden}
+.bar .fill{height:100%;width:0;background:var(--accent);transition:width .3s}
+.bar .label{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-top:6px;font-variant-numeric:tabular-nums}
+h1{font-size:30px;line-height:1.3;margin:28px 0 6px;font-weight:800;text-wrap:balance}
+.lead{color:var(--muted);margin:0 0 24px}
+h2{font-size:22px;margin:36px 0 12px;font-weight:800;display:flex;align-items:center;gap:10px}
+h2 .n{display:inline-grid;place-items:center;width:34px;height:34px;background:var(--accent);color:var(--on-accent);font-size:16px}
+.note{background:var(--panel);padding:12px 16px;border-inline-start:3px solid var(--accent);margin:0 0 16px;font-size:15px}
+.step{display:grid;grid-template-columns:28px 1fr;gap:12px;background:var(--panel);padding:14px 16px;margin-bottom:10px;align-items:start}
+.step input{width:22px;height:22px;margin:6px 0 0;accent-color:var(--accent);cursor:pointer}
+.step label{cursor:pointer}
+.step .t{font-weight:700}
+.step .d{color:var(--muted);font-size:15px}
+.step.done .t{text-decoration:line-through;color:var(--muted)}
+.colors{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;margin:10px 0 4px}
+.c{display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--line);padding:8px 10px}
+.c .sw{width:30px;height:30px;flex:none;border:1px solid var(--line)}
+.c .nm{font-size:14px;line-height:1.3;min-width:0}
+.c .hx{font-family:Arial,monospace;font-size:13px;color:var(--muted);direction:ltr;display:block}
+.c button{margin-inline-start:auto;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:13px;padding:4px 8px;cursor:pointer}
+.c button:hover,.c button:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+.grad{height:26px;background:linear-gradient(90deg,#D6AA42,#8E732A);margin:8px 0 2px;border:1px solid var(--line)}
+code{font-family:Arial,monospace;direction:ltr;unicode-bidi:isolate;background:var(--panel);padding:1px 6px;font-size:14px}
+.finish{display:none;background:var(--ink);color:var(--bg);padding:24px;margin-top:32px;text-align:center}
+.finish.show{display:block}
+.finish .big{font-size:24px;font-weight:800;margin:0 0 8px}
+.finish .msg{font-size:28px;font-weight:800;color:var(--gold);letter-spacing:.02em;margin:10px 0}
+.small{font-size:14px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.bar .fill{transition:none}}
+</style>
+<div class="wrap">
+  <div class="bar"><div class="track"><div class="fill" id="fill"></div></div><div class="label"><span id="count">0 / 0</span><span>إعداد Canva — مجموعة الضيافة العالمية</span></div></div>
+
+  <h1>الجزء اليدوي في Canva: خطوتان فقط</h1>
+  <p class="lead">كل ما يلي لا يقبله Canva عبر الموصّل على خطة Pro الفردية (Brand Kit ورفع الملفات تتم في المحرر فقط). علّم كل بند عند إتمامه؛ عندما تكتمل القائمة تظهر لك الكلمة التي تكتبها لي لأكمل الباقي.</p>
+
+  <h2><span class="n">1</span> تعبئة Brand Kit</h2>
+  <p class="note">المسار: Canva ▸ Brand ▸ Brand Kit ▸ أنشئ كِت باسم «مجموعة الضيافة العالمية». المصدر: Brand Facts §Palette + ملفات RGB الرسمية (14 أكتوبر).</p>
+
+  <div class="step"><input type="checkbox" id="s1"><label for="s1"><span class="t">الألوان: أضف الـ12 لوناً بهذه الأسماء</span><span class="d">زر «نسخ» يضع الـHEX في الحافظة.</span>
+    <div class="colors" id="colors"></div>
+    <div class="grad"></div><span class="small">تدرج الشعار (للمعاينة فقط؛ لا يُطبَّق على النصوص): #D6AA42 ← #8E732A أفقياً.</span></label></div>
+
+  <div class="step"><input type="checkbox" id="s2"><label for="s2"><span class="t">الخطوط: Almarai Bold للعناوين العربية، Almarai Regular للنص</span><span class="d">Almarai موجود في مكتبة Canva، ابحث عنه بالاسم. أحجام البدء على 1080 بكسل: عنوان 50، فرعي 28، نص 24.</span></label></div>
+
+  <div class="step"><input type="checkbox" id="s3"><label for="s3"><span class="t">الخط اللاتيني: Avenir Next إن كانت لديك رخصة رفع، وإلا Arial</span><span class="d">لا ترفع Avenir Next بلا رخصة (خط تجاري). الاختيار يُسجَّل لاحقاً في مذكرة التسليم.</span></label></div>
+
+  <div class="step"><input type="checkbox" id="s4"><label for="s4"><span class="t">الشعارات: ارفع مجلد <code>01_Logo_SVG</code> (18 ملفاً) إلى Brand Kit ▸ Logos</span><span class="d">إن رفض Canva ملف SVG استخدم نسخة PNG من <code>01_Logo_PNG</code>. ثم ارفع <code>02_Symbol</code> (الرمز وحده، النسخة المصححة بثلاثة خطوط).</span></label></div>
+
+  <h2><span class="n">2</span> رفع الملفات إلى المجلدات</h2>
+  <p class="note">المجلدات موجودة بالفعل في حسابك: <code>ADIG – Al Deafah Brand</code> وداخله ستة مجلدات مرقّمة. الرفع: Uploads ▸ Upload files ▸ ثم «نقل إلى مجلد».</p>
+
+  <div class="step"><input type="checkbox" id="s5"><label for="s5"><span class="t"><code>01_Logo_PNG</code> + <code>02_Symbol</code> ← المجلد «01 Logo &amp; Symbol»</span><span class="d">PNG شفاف 4x للاستخدام في التصاميم؛ الـSVG في Brand Kit يكفي.</span></label></div>
+  <div class="step"><input type="checkbox" id="s6"><label for="s6"><span class="t"><code>03_Pattern</code> ← المجلد «02 Pattern»</span><span class="d">بلوكات 2×2 بأربعة ألوان + النقشة الكاملة. القاعدة: لا قصّ، أقلها 2×2، لا تلامس الحافة.</span></label></div>
+  <div class="step"><input type="checkbox" id="s7"><label for="s7"><span class="t"><code>04_Profile_Covers</code> ← المجلد «04 Covers &amp; Profile»</span><span class="d">البروفايل 1080 و400 (أسود/أبيض) وأغلفة فيسبوك وLinkedIn وX وYouTube.</span></label></div>
+  <div class="step"><input type="checkbox" id="s8"><label for="s8"><span class="t">تأكد أن الاتصال يرى الملفات</span><span class="d">افتح أي ملف مرفوع من داخل Canva مرة واحدة؛ بعدها أستطيع الوصول إليه عبر الموصّل (قراءة مسموحة، والكتابة تطلب موافقتك كما ضبطت).</span></label></div>
+
+  <div class="finish" id="finish">
+    <p class="big">اكتمل الجزء اليدوي</p>
+    <p>ارجع إلى المحادثة واكتب:</p>
+    <p class="msg">تم الرفع</p>
+    <p class="small" style="color:inherit;opacity:.8">فأبني القوالب (المنشورات بكل مقاساتها وعائلاتها، الأغلفة، العروض) وأنشرها داخل المجلدات، ثم ننتقل إلى المرحلة 4.</p>
+  </div>
+</div>
+<script>
+const COLORS=[["Deafah Black","#101820"],["Deafah Grey","#B6ADA5"],["Deafah Yellow","#D29F13"],["Deafah Dark Blue","#0E4174"],["Deafah Blue","#008BC4"],["Deafah Dark Green","#13322B"],["Deafah Green","#8DAE81"],["Deafah Dark Red","#C10016"],["Deafah Beige","#E1B87F"],["Logo Gold Start","#D6AA42"],["Logo Gold End","#8E732A"],["Solid Gold (screen)","#BC9639"]];
+const box=document.getElementById('colors');
+COLORS.forEach(([n,h],i)=>{const d=document.createElement('div');d.className='c';d.innerHTML=`<span class="sw" style="background:${h}"></span><span class="nm">${n}<span class="hx">${h}</span></span><button type="button" data-h="${h}" id="cp${i}">نسخ</button>`;box.appendChild(d);});
+box.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;e.preventDefault();const h=b.dataset.h;const done=()=>{b.textContent='تم';setTimeout(()=>b.textContent='نسخ',1200)};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(h).then(done).catch(()=>{const r=document.createRange();r.selectNodeContents(b.previousElementSibling.querySelector('.hx'));const s=getSelection();s.removeAllRanges();s.addRange(r);});}
+  else{const r=document.createRange();r.selectNodeContents(b.previousElementSibling.querySelector('.hx'));const s=getSelection();s.removeAllRanges();s.addRange(r);}});
+const boxes=[...document.querySelectorAll('.step input')];
+function load(){try{const s=JSON.parse(localStorage.getItem('adig-canva')||'{}');boxes.forEach(b=>{b.checked=!!s[b.id]})}catch(e){}}
+function save(){try{const s={};boxes.forEach(b=>s[b.id]=b.checked);localStorage.setItem('adig-canva',JSON.stringify(s))}catch(e){}}
+function update(){const n=boxes.filter(b=>b.checked).length;document.getElementById('fill').style.width=(100*n/boxes.length)+'%';document.getElementById('count').textContent=n+' / '+boxes.length;
+  boxes.forEach(b=>b.closest('.step').classList.toggle('done',b.checked));const f=document.getElementById('finish');f.classList.toggle('show',n===boxes.length);if(n===boxes.length)f.scrollIntoView({behavior:'smooth',block:'center'});}
+boxes.forEach(b=>b.addEventListener('change',()=>{save();update()}));load();update();
+</script>
