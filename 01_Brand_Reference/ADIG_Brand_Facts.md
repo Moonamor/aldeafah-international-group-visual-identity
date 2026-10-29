@@ -120,8 +120,14 @@ Source: Manual pp. 22–23; HR manual pp. 21–22.
 - `ADIG_decor_pattern_CMYK.ai` reads with "art outside its artboards" warnings in VectorCraft; the PDF part is complete.
 
 ## 8. Gaps (not defined in any source) — status 2026-10-14
-Closed by Phase 2–3 builds (see `ADIG_Phase2_Specs.md` for the spec of each): C4 envelope · DL 220 × 110 · Group email signature · social-media kit (SVG/PNG + Canva import PDFs) · packaging bags S/M/L · website UI tokens and components · logo animation (sound brief only) · Canva kit · PowerPoint theme (8 variants) · Arabic typeface = Almarai (decision 2026-10-14, replaces the manual's Noto Sans Arabic) · corrected colour sheet · minimum logo size (§2.5).
+Closed by Phase 2–3 builds (see `ADIG_Phase2_Specs.md` for the spec of each): C4 envelope · DL 220 × 110 · Group email signature · social-media kit (SVG/PNG + Canva import PDFs) · packaging bags S/M/L · website UI tokens and components (radius updated to 12 px on 2026-10-29, see §8b) · logo animation (sound brief only) · Canva kit · PowerPoint theme (8 variants) · Arabic typeface = Almarai (decision 2026-10-14, replaces the manual's Noto Sans Arabic) · corrected colour sheet · minimum logo size (§2.5).
 Still open (need an outside input): Avenir Next web-font licence · printer confirmation of the DL size actually used · factory dieline for the bags · sound production (brief delivered) · photography set for the Property templates.
+
+## 8b. Corner radius (decision 2026-10-29)
+- Replaces the Phase-2 rule "radius 0 everywhere, 2 px on inputs". New standard: **12 px** (allowed range 10–16 px; 12 is the token) on every button, chip, card, inset panel and photo frame, in social templates, presentations and the website. Measured at 1080 px wide; scale proportionally elsewhere (≈ 1.1 % of design width).
+- Unchanged, never rounded: edge-to-edge surfaces, rules and dividers ≤ 6 px, the logo and symbol, the pattern (strips, columns, fields, tiles).
+- Property family: the photo is inset to the 72 px margin so the 12 px corners are visible, with the black 0→75 % gradient inside the same frame.
+- Applied 2026-10-29 to the 31 Canva social templates (pages 1–4), the 8 Canva presentations and the live posts via the connector (`replace_shape` with a rounded-rect path). `09_Website/tokens.css` updated (`--radius: 12px`). The repo SVG/PPTX/PDF exports in 06_Social, 07_PowerPoint and 11_Canva still carry square corners and are to be regenerated.
 
 ## 9. Phase 3 — Canva (as built, 2026-10-14)
 - Connector bound to the personal Pro team (not the education team); Brand Kit "مجموعة الضيافة العالمية" id `kAHX_PTPweE`; brand root folder `Deafah_brand` (`FAHYA4eDjc0`) with `01_Logo_PNG`, `01_Logo_SVG`, `02_Symbol`, `03_Pattern`, `04_Profile_Covers` uploaded by Badr; eight connector-visible assets: logos CMYK `MAHYA5DYVtE`, NEG-CMYK `MAHYA4nkXYI`, Left `MAHYAw_6YrI`, Left NEG `MAHYA6HxQ84`, Right `MAHYAxcUxko`, Right NEG `MAHYA4d5MEQ`; pattern blocks CMYK `MAHYAxTSq7o`, SOLID GOLD `MAHYA9pEJ-U`.
